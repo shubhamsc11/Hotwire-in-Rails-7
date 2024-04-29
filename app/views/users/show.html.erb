@@ -1,0 +1,28 @@
+<body>
+  <div style="background-color: #fadbca; border-radius: 2px; border: 1px solid black;">
+    <center>
+      <h4>User Details</h4>
+      <hr>
+
+      <% if @user.present? %>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+          </tr>
+
+          <tr>
+            <td><%= @user.id %></td>
+            <td><%= @user.name %></td>
+          </tr>
+        </table>
+      <% else %>
+        <p>User Not Found!</p>
+      <% end %>
+    </center>
+    <br>
+    <button><%= link_to 'Back', :back%></button>
+    <br>
+    <br>
+  </div>
+</body>

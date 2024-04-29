@@ -1,0 +1,7 @@
+<%#= turbo_stream.prepend 'users_list'  do %>
+  <%#= render 'users_form', collection: @users %>
+<%# end %>
+
+<%= turbo_stream.append "users_list" do %>
+  <%= render "users_form", collection: @users %>
+<% end %>

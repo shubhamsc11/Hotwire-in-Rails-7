@@ -1,0 +1,24 @@
+<div>
+  <% if users.present? %>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+
+      <% users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>Users Not Found!</p>
+  <% end %>
+</div>
+
+<br>
+<button><%= link_to 'Back', :back%></button>
+<br>
+<br>

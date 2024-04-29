@@ -1,0 +1,7 @@
+<%= form_with model: user, remote: true, url: users_path, method: :post do |form| %>
+  <div>
+    <%= form.label 'Name ' %>
+    <%= form.text_field :name, placeholder: 'Enter user name' %>
+    <%= form.submit 'Add User' %>
+  </div>
+<% end %>

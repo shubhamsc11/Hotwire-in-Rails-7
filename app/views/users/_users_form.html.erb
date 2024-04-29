@@ -1,0 +1,21 @@
+<div id='users_list'>
+  <% if @users.present? %>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= link_to 'Show', user, data: { turbo: false } %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>Users Not Found!</p>
+  <% end %>
+</div>

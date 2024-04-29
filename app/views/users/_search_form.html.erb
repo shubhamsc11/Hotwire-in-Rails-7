@@ -1,0 +1,6 @@
+<%= form_with scope: :any, url: search_user_path, method: :get do |form| %>
+  <div style="padding-left: 10px;">
+    <%= form.text_field :search, placeholder: 'Search' %>
+    <%= form.submit 'Search' %>
+  </div>
+<% end %>

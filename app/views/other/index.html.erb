@@ -1,0 +1,81 @@
+<div style="background-color: #c2fccb; border-radius: 2px; border: 1px solid black;">
+  <center>
+    <h1>This is Other page</h1>
+    <hr>
+    <div><%= link_to 'Enter to home page', root_path %></div>
+  </center>
+
+  <div style="margin-top: 2rem;">
+    <%= form_with scope: :any, url: post_something_path do |form| %>
+      <%= form.submit 'Post something' %>
+    <% end %>
+    
+    <turbo-frame id="messages">
+      <div>An empty message</div>
+    </turbo-frame>
+  </div>
+
+  <%# Stimulus Example %>
+  <div style="margin-top: 2rem;">
+    <h3>Stimulus Example</h3>  
+    <div data-controller="hello">
+      <input data-hello-target="name" type="text">
+      <button data-action="click->hello#greet">
+        Greet
+      </button>
+      <span data-hello-target="output">
+      </span>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <h4>Your Full Name</h4>  
+    <div data-controller="fullname">
+      <input data-fullname-target="first_name" type="text">
+      <input data-fullname-target="last_name" type="text">
+      <button data-action="click->fullname#get_fullname">
+        Get Full Name 
+      </button>
+      <span data-fullname-target="output">
+      </span>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <h4>Calculator</h4>  
+    <div data-controller="calculator">
+      Number 1 :
+      <input data-calculator-target="num1" type="number">
+      Number 2 :
+      <input data-calculator-target="num2" type="number">
+      <br>
+      <br>
+      <button data-action="click->calculator#addition">
+        Add
+      </button>
+      <span data-calculator-target="add">
+      </span>
+
+      <button data-action="click->calculator#subtraction">
+        Sub
+      </button>
+      <span data-calculator-target="sub">
+      </span>
+      
+      <button data-action="click->calculator#multiplication">
+        Mul
+      </button>
+      <span data-calculator-target="mul">
+      </span>
+      
+      <button data-action="click->calculator#division">
+        Div
+      </button>
+      <span data-calculator-target="div">
+      </span>
+    </div>
+  </div>
+
+  <br>
+
+</div>

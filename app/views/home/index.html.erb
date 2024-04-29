@@ -1,0 +1,46 @@
+<div style="background-color: #f7e68f; border-radius: 2px; border: 1px solid black;">
+  <center>
+    <h1>This is Rails Hotwire home page</h1>
+    <hr>
+
+    <div style="font-size: 22px;">
+      <button><%= link_to "Go to other page", other_index_path %></button>
+      |
+      <button><%= link_to "Go to users page", users_index_path %></button>
+      |
+      <turbo-frame id="last_users_list">
+        <button><%= link_to "Last 5 Users", last_five_users_path %></button>
+      </turbo-frame>
+    </div>
+  </center>
+  
+  <%= turbo_frame_tag 'anyframe' do %>        
+    <div>
+      <h2>Home view</h2>
+      <%= form_with scope: :any, url: turbo_frame_submit_path, local: true do |form| %>
+        <%= form.label :anynumber, 'Type an integer (odd or even)', 'class' => 'my-0  d-inline'  %>
+        <%= form.text_field :anynumber, type: 'number', 'required' => 'true', 'value' => 
+        "#{local_assigns[:anynumber] || 0}",  'aria-describedby' => 'anynumber' %>
+        <%= form.submit 'Submit this number', 'id' => 'submit-number' %>
+      <% end %>
+    <div>
+  <% end %>
+
+  <br>
+  <br>
+
+  <%= turbo_frame_tag 'anyframe' do %>        
+    <div>
+      <h2>Number Panel</h2>
+      <%= form_with scope: :any, url: turbo_number_submit_path, local: true do |form| %>
+        <%= form.label :anynumber, 'Type an integer (odd or even)', 'class' => 'my-0  d-inline'  %>
+        <%= form.text_field :anynumber, type: 'number', 'required' => 'true', 'value' => 
+        "#{local_assigns[:anynumber] || 0}",  'aria-describedby' => 'anynumber' %>
+        <%= form.submit 'Submit this number', 'id' => 'submit-number' %>
+      <% end %>
+    <div>
+  <% end %>
+  
+  <br>
+  <br>
+</div>

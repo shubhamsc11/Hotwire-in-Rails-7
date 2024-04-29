@@ -1,0 +1,55 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    .btn_panel {
+      position: absolute;
+      background: #cacaca;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      padding: 3px 5px 2px 5px;
+      font-size: 0.8em;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="background-color: #fadbca; border-radius: 2px; border: 1px solid black;">
+    <center>
+      <h1>Users List</h1>
+    </center>
+    <hr>
+
+    <button style="margin-left: 95%;"><%= link_to 'Home', root_path %></button>
+    <div style="justify-content: space-between;">
+      <span class="btn_panel" style="left: 50px;">
+        Add New User
+      </span>
+    </div>
+    <br>
+    <br>
+    <%= render 'new_user_form', user: @user %>
+
+    <br>
+    <br>
+    <div style="justify-content: space-between;">
+      <span class="btn_panel" style="left: 50px;">
+        Search User 
+      </span>
+    </div>
+    <br>
+    <br>
+    <%= render 'search_form', search: @search %>
+
+    <center>
+      <div id="users_list">
+        <%= render 'users_form', users: @users %>
+      </div>
+    </center>
+
+  </div>
+
+</body>
+</html>
